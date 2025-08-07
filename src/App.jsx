@@ -140,7 +140,7 @@ function HomePage() {
       </header>
 
       {/* 標籤篩選按鈕區塊 */}
-      <section className="flex flex-wrap gap-4 mb-6 justify-center">
+      <section className="flex flex-wrap gap-8 mb-6 justify-center">
         {uniqueTags.map((tag) => (
           <Button
             key={tag}
@@ -154,12 +154,12 @@ function HomePage() {
       </section>
 
       {/* 搜尋輸入框區塊 */}
-      <section className="mb-6 max-w-md mx-auto">
+      <section className="mb-6 mx-auto px-4">
         <Input
-          placeholder="搜尋文章標題或內容..."
+          placeholder="Search..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
-          className="rounded-xl"
+          className="w-full sm:w-80 md:w-96 h-12 rounded-xl"
         />
       </section>
 
@@ -167,7 +167,7 @@ function HomePage() {
       <section className="grid gap-6 md:grid-cols-2 max-w-7xl mx-auto">
         {filteredPosts.map((post) => (
           <Card key={post.id} className="rounded-2xl shadow-md transition-transform hover:scale-[1.02] duration-300">
-            <CardContent className="p-6">
+            <CardContent className="p-4">
               <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
               <p className="text-sm text-gray-500 mb-2">{post.date}</p>
               <div className="flex gap-2 mb-4">
