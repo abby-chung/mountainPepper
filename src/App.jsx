@@ -103,7 +103,7 @@ function Navbar() {
   return (
     <nav className="flex justify-between items-center bg-white px-6 py-4 shadow-md mb-6 rounded-xl">
       <Link to="/" className="text-2xl font-bold text-orange-800">
-        我的部落格
+        Mountain Pepper
       </Link>
       <div className="flex gap-4">
         <Link to="/" className="text-orange-700 hover:underline">
@@ -156,7 +156,7 @@ function HomePage() {
       {/* 搜尋輸入框區塊 */}
       <section className="mb-6 max-w-md mx-auto">
         <Input
-          placeholder="搜尋文章標題或內容..."
+          placeholder="Search"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="rounded-xl"
@@ -164,26 +164,33 @@ function HomePage() {
       </section>
 
       {/* 文章列表區塊 */}
-      <section className="grid gap-6 md:grid-cols-2 max-w-7xl mx-auto">
+      <section className="grid gap-8 md:grid-cols-2 max-w-7xl mx-auto">
         {filteredPosts.map((post) => (
-          <Card key={post.id} className="rounded-2xl shadow-md transition-transform hover:scale-[1.02] duration-300">
-            <CardContent className="p-6">
-              <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
-              <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-              <div className="flex gap-2 mb-4">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
+          <Card 
+            key={post.id} 
+            className="border border-gray-200 transition-all duration-300 hover:shadow-xl hover:border-orange-300"
+          >
+            <CardContent className="p-6 flex flex-col h-full">
+              <div>
+                <h2 className="text-2xl font-semibold mb-2">{post.title}</h2>
+                <p className="text-sm text-gray-500 mb-2">{post.date}</p>
+                <div className="flex gap-2 mb-4">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="mb-4 flex-grow">{post.summary}</p>
               </div>
-              <p className="mb-4">{post.summary}</p>
-              <Link to={`/post/${post.id}`}>
-                <Button className="rounded-xl">閱讀更多</Button>
-              </Link>
+              <div className="mt-auto">
+                <Link to={`/post/${post.id}`}>
+                  <Button className="rounded-xl">閱讀更多</Button>
+                </Link>
+              </div>
             </CardContent>
           </Card>
         ))}
