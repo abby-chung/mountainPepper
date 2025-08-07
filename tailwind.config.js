@@ -23,7 +23,16 @@ export default {
     "duration-300",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+      'brown-900': '#4b3f35',
+      'orange-50': '#fdf6ee',
+      'orange-100': '#fff4ec',
+      'orange-600': '#ff7028',
+      'orange-700': '#c25e00',
+      'orange-800': '#9a4c00',
+      },
+    },
   },
   plugins: [],
 };

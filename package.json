@@ -1,7 +1,8 @@
 {
   "name": "mountainPepper",
-  "version": "1.0.0",
   "private": true,
+  "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -12,18 +13,20 @@
     "clsx": "^2.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.24.1",
+    "gh-pages": "^6.3.0"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
-    "@vitejs/plugin-react": "^4.1.0",
-    "autoprefixer": "^10.4.21",
-    "css": "^3.0.0",
-    "gh-pages": "^6.3.0",
-    "init": "^0.1.2",
-    "npx": "^10.2.2",
-    "post": "^0.0.1",
-    "postcss": "^8.5.6",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react": "^7.34.1",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "postcss": "^8.4.38",
     "tailwindcss": "^4.1.11",
     "vite": "^5.2.0"
   }
