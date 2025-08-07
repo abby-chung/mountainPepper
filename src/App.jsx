@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-// Mock components for Card, Button, and Input using only core Tailwind classes
+// Mock components for Card, Button, and Input using Tailwind classes
 const Card = ({ children, className = "" }) => (
   <div className={`bg-white rounded-lg shadow-md ${className}`}>
     {children}
@@ -249,13 +249,14 @@ export default function App() {
   const PostPage = () => {
     if (!selectedPost) {
       return (
-        <main className="min-h-screen bg-amber-50 text-amber-900 p-6">
+        <div className="min-h-screen bg-amber-50 text-amber-900 p-6">
           <Navbar />
           <div className="text-center">
             <h2 className="text-2xl font-bold mb-4">找不到文章</h2>
             <Button onClick={() => setCurrentView("home")}>返回首頁</Button>
           </div>
-        </main>
+          <Footer />
+        </div>
       );
     }
 

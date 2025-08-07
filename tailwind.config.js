@@ -1,38 +1,29 @@
+/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
-  safelist: [
-    "bg-[#ff7028]",
-    "text-white",
-    "border-orange-400",
-    "text-orange-600",
-    "text-[#c25e00]",
-    "bg-white",
-    "text-gray-500",
-    "text-gray-600",
-    "text-gray-700",
-    "text-gray-800",
-    "rounded-2xl",
-    "shadow",
-    "shadow-md",
-    "hover:shadow-lg",
-    "hover:scale-[1.02]",
-    "transition",
-    "duration-300",
-  ],
   theme: {
     extend: {
       colors: {
-      'brown-900': '#4b3f35',
-      'orange-50': '#fdf6ee',
-      'orange-100': '#fff4ec',
-      'orange-600': '#ff7028',
-      'orange-700': '#c25e00',
-      'orange-800': '#9a4c00',
+        amber: {
+          50: '#fffbeb',
+          100: '#fef3c7',
+          200: '#fde68a',
+          300: '#fcd34d',
+          400: '#fbbf24',
+          500: '#f59e0b',
+          600: '#d97706',
+          700: '#b45309',
+          800: '#92400e',
+          900: '#78350f',
+        }
+      },
+      fontFamily: {
+        'sans': ['Inter', 'system-ui', 'sans-serif'],
       },
     },
   },
   plugins: [],
-};
+}
