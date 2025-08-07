@@ -6,12 +6,13 @@ import {
   Link,
   useParams
 } from "react-router-dom";
+import clsx from "clsx";
 
 const posts = [
   {
     id: "1",
     title: "部落格文章一",
-    date: "2025-08-06",
+    date: "2025-08-07",
     tags: ["生活", "風格"],
     summary: "這是一篇關於生活風格的文章摘要...",
     content: "這是一篇關於生活風格的完整文章內容。"
@@ -67,9 +68,12 @@ const HomePage = () => {
           <button
             key={tag}
             onClick={() => setFilter(tag)}
-            className={`px-4 py-1 text-sm rounded-full border transition ${
-              filter === tag ? "bg-[#ff7028] text-white" : "border-orange-400 text-orange-600"
-            }`}
+            className={clsx(
+              "px-4 py-1 text-sm rounded-full border transition",
+              filter === tag
+                ? "bg-[#ff7028] text-white"
+                : "border-orange-400 text-orange-600"
+            )}
           >
             {tag}
           </button>
