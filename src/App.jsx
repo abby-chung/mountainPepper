@@ -212,27 +212,33 @@ export default function App() {
         {filteredPosts.map((post) => (
           <Card 
             key={post.id} 
-            className="rounded-lg shadow-md transition-transform hover:scale-105 duration-300 cursor-pointer"
-            onClick={() => {
-              setSelectedPostId(post.id);
-              setCurrentView("post");
-            }}
+            className="rounded-lg shadow-md transition-transform hover:scale-105 duration-300 flex flex-col"
           >
-            <CardContent className="p-4">
-              <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
-              <p className="text-sm text-gray-500 mb-2">{post.date}</p>
-              <div className="flex gap-2 mb-4 flex-wrap">
-                {post.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
+            <CardContent className="p-4 flex flex-col flex-grow">
+              <div className="flex-grow">
+                <h2 className="text-xl font-semibold mb-2">{post.title}</h2>
+                <p className="text-sm text-gray-500 mb-2">{post.date}</p>
+                <div className="flex gap-2 mb-4 flex-wrap">
+                  {post.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded-full"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+                <p className="mb-4 text-sm">{post.summary}</p>
               </div>
-              <p className="mb-4 text-sm">{post.summary}</p>
-              <Button className="rounded-lg w-full">閱讀更多</Button>
+              <Button 
+                className="rounded-lg w-full"
+                onClick={() => {
+                  setSelectedPostId(post.id);
+                  setCurrentView("post");
+                }}
+              >
+                閱讀更多
+              </Button>
             </CardContent>
           </Card>
         ))}
