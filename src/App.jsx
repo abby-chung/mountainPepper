@@ -126,7 +126,7 @@ function Post() {
 
 export default function App() {
   return (
-    <Router>
+    <Router basename="/mountainPepper">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/post/:id" element={<Post />} />
